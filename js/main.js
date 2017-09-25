@@ -3,6 +3,12 @@
 function reply_click(clicked_id){
   console.log(clicked_id);
 };
+
+
+$('#c').mouseover(function(){
+    cNote.currentTime = 0;
+    cNote.play();
+});
 //allows for quick clicks to trigger each time
 function play() {
   var audio = document.getElementById('');
