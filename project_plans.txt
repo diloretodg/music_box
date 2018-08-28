@@ -1,0 +1,23 @@
+Checklist for project progress
+    - find larger audio selection (more notes on scale)
+    - rework js code
+    - mess with css add asthetic
+
+
+    js goals
+        redo functions
+        add memory function (learn its limits with different methods)
+            time and progression are both relevent concepts for the memory
+        add pitch test mode
+
+    css goals
+        set more intuitive element orientation/ layout
+        set more specific element shape
+
+    media goals 
+        new sound library
+            can potentially record new library if necessary
+            potentially add selection of instruments/range
+            learn and decide between mp3 and wav for optimizing 
+
+            
