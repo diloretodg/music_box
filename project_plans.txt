@@ -13,6 +13,7 @@ Checklist for project progress
     css goals
         set more intuitive element orientation/ layout
         set more specific element shape
+        look into css animations for playing with each note
 
     media goals 
         new sound library

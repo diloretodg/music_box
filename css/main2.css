@@ -9,84 +9,19 @@ body {
 #instrument {
     height: auto;
     width: auto;
-    margin-left: 6%;
+    margin: 0 auto;
+
+    padding: 0;
     position: absolute;
-    top: 50%; 
+    top: 50%; left: auto; bottom: auto; right: auto;
 }
-/* focusing on position */
-.music-note {
-    position: relative;
-    margin: 1px;
-}
-/* progressively greater the further out */
-/* to the left */
-#cs3, #b2{
-    right: 1%;
-}
-
-#d3 {
-    right: 2%;
-}
-#eb3, #f3 {
-    right: 3%;
-}
-#e3, #fs3 {
-    right: 4%;
-}
-#g3 {
-    right: 5%;
-}
-#ab3 {
-    right: 6%;
-}
-#a3 {
-    right: 7%;
-}
-#bb3, #c4 {
-    right: 8%;
-}
-#b3 {
-    right: 9%;
-}
-
-
-/* to the right */
-#a2 {
-    left: 1%;
-}
-
-#ab2 {
-    left: 2%;
-}
-
-#g2 {
-    left: 3%;
-}
-#fs2, #e2 {
-    left: 4%;
-}
-#f2, #eb2 {
-    left: 5%;
-}
-
-#d2 {
-    left: 6%;
-}
-#cs2 {
-    left: 7%;
-}
-
-#c2 {
-    left: 8%;
-}
-
-
-
 
 /*This is the style that give our music boxes shape*/
 .box {
     width: 50px;
     height: 50px;
+    margin: auto;
+    float:left;
     transform:rotate(45deg)
 }
 
@@ -162,50 +97,95 @@ body {
     cursor: pointer;
 }
 
-/* notes active and notes lit */
-.c:active, .c.light {
+/* notes active */
+.c:active {
     background-color:#db1d2d;
 }
 
-.d:active, .d.light {
+.d:active {
     background-color:#f0421c;
 }
 
-.e:active, .e.light {
+.e:active {
     background-color:#fec02d;
 }
 
-.f:active, .f.light {
+.f:active {
     background-color:#20d071;
 }
 
-.g:active, .g.light {
+.g:active {
     background-color:#1a9ddb;
 }
 
-.a:active, .a.light {
+.a:active {
     background-color:#a13fad;
 }
 
-.b:active, .b.light {
+.b:active {
     background-color:#f26fd4;
 }
 
 /* notes sharp/flat */
-.c.sharp, .f.sharp {
+.c.sharp {
     position: relative;
-    bottom: 40px;
+    bottom: 50px;
 }
 
-.e.flat, .a.flat, .b.flat {
+.f.sharp {
     position: relative;
-    top: 40px;
+    bottom: 50px;
+}
+
+.e.flat {
+    position: relative;
+    top: 50px;
+    margin: 0;
+}
+
+.a.flat {
+    position: relative;
+    top: 50px;
+}
+
+.b.flat {
+    position: relative;
+    top: 50px;
+}
+
+/* notes lit */
+.c.light {
+    background-color:#db1d2d;
+}
+
+.d.light {
+    background-color:#f0421c;
+}
+
+.e.light {
+    background-color:#fec02d;
+}
+
+.f.light {
+    background-color:#20d071;
+}
+
+.g.light {
+    background-color:#1a9ddb;
+}
+
+.a.light {
+    background-color:#a13fad
+}
+
+.b.light {
+    background-color:#f26fd4;
 }
 
 /* reset style */
 #reset {
     background-color: #1a9ddb;
-    left: 20%;
+    left: 45%;
     top: 10%;
     text-align: center;
     position: absolute;

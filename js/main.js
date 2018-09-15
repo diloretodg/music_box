@@ -1,76 +1,35 @@
+var noteIntervals = [];
 
-// pulls key id
-function reply_click(clicked_id){
-  console.log(clicked_id);
-};
+function playSong(s){
+    for (var i = 0; i < s.length; i ++) {
+        setTimeout(function(index) {
+            play(s[index].note)
+        }.bind(null, i), (i+1) * 1000)
+    }
+}
 
+// clear all playing notes
+$("#reset").on("click", function() {
+    for (var i = 0; i < noteIntervals.length; i++) {
+        clearInterval(noteIntervals[i])
+    }
+    console.log("timer reset");
+})
 
-$('#c').mouseover(function(){
-    cNote.currentTime = 0;
-    cNote.play();
-});
-//allows for quick clicks to trigger each time
-function play() {
-  var audio = document.getElementById('');
-  if (audio.paused) {
-      audio.play();
-  }else{
-      audio.currentTime = 0
-  }
-};
-
-function cPlay(){
-  var audio = document.getElementById('cAudio');
-  if (audio.paused) {
-      audio.play();
-  }else{
-      audio.currentTime = 0
-  }
-};
-function dPlay(){
-  var audio = document.getElementById('dAudio');
-  if (audio.paused) {
-      audio.play();
-  }else{
-      audio.currentTime = 0
-  }
-};
-function ePlay(){
-  var audio = document.getElementById('eAudio');
-  if (audio.paused) {
-      audio.play();
-  }else{
-      audio.currentTime = 0
-  }
-};
-function fPlay(){
-  var audio = document.getElementById('fAudio');
-  if (audio.paused) {
-      audio.play();
-  }else{
-      audio.currentTime = 0
-  }
-};
-function gPlay(){
-  var audio = document.getElementById('gAudio');
-  if (audio.paused) {
-      audio.play();
-  }else{
-      audio.currentTime = 0
-  }
-};
-function aPlay(){
-  var audio = document.getElementById('aAudio');
-  if (audio.paused) {
-      audio.play();
-  }else{
-      audio.currentTime = 0
-  }
-};
-function bPlay(){  var audio = document.getElementById('bAudio');
-  if (audio.paused) {
-      audio.play();
-  }else{
-      audio.currentTime = 0
-  }
-};
+// plays our notes
+function play(n) {
+    // stores specfic box linked to audio
+        currentNote = $("a[data-note="+ n +"]").addClass("light");
+    // adds a class for a half second linked to the note div attached to the audio
+        window.setTimeout(function() {
+            currentNote.removeClass("light");
+        }, 300);
+    // pulls id for specific audio
+        var audio = document.getElementById(n);
+    // on multiple clicks resets time
+        if (audio.paused) {
+            audio.play();
+        }else{
+            audio.currentTime = 0
+        };
+    }; 
