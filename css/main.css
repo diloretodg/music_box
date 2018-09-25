@@ -224,3 +224,6 @@ body {
     margin-left: 5%;
     float: left;   
 }
+.song:active{
+    background-color: #1a9ddb;
+}

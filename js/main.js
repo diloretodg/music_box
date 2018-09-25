@@ -1,5 +1,6 @@
 var noteIntervals = [];
 var currentNotes
+var songPlaying = [];
 
 // structures an incremented set timeout based off of paramater that will be an array
 function playSong(s){
@@ -7,11 +8,19 @@ function playSong(s){
     for (var i = 0; i < s.length; i ++) {
         var timing = s[i].timing;
         time = time + timing;
-        setTimeout(function(index) {
+        songPlaying.push(setTimeout(function(index) {
             play(s[index].note)
-        }.bind(null, i), (time))
+        }.bind(null, i), (time)))
     }
 }
+
+$("#reset").on("click", function() {
+    for (var i = 0; i < songPlaying.length; i++) {
+        clearTimeout(songPlaying[i]);
+    }
+    console.log("timer reset");
+})
+
 
 // event listener for note click
 $(".music-note").on("click", function(){
