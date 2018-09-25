@@ -3,45 +3,146 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <title>My Music Box</title>
-  </audio>
-  <link href="css/main.css"  rel="stylesheet" type="text/css"/>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+
+    <title>My Music Box</title>
+    <link href="css/main.css"  rel="stylesheet" type="text/css"/>
   
-</head>
+  </head>
 <body>
+  <div id="song-btns"></div>
   <div id="reset" class="box">Reset</div>
   <div id="instrument">
     <div class="row">
-        <a id="c2" class="box music-note c" data-note="c2Audio"></a>
-        <a id="cs2" class="box music-note c sharp" data-note="cs2Audio"></a>
-        <a id="d2" class="box music-note d" data-note="d2Audio"></a>
-        <a id="eb2" class="box music-note e flat" data-note="eb2Audio"></a>
-        <a id="e2" class="box music-note e" data-note="e2Audio"></a>
-        <a id="f2" class="box music-note f" data-note="f2Audio"></a>
-        <a id="fs2" class="box music-note f sharp" data-note="fs2Audio"></a>
-        <a id="g2" class="box music-note g" data-note="g2Audio"></a>
-        <a id="ab2" class="box music-note a flat" data-note="ab2Audio"></a>
-        <a id="a2" class="box music-note a" data-note="a2Audio"></a>
-        <a id="bb2" class="box music-note b flat" data-note="bb2Audio"></a>
-        <a id="b2" class="box music-note b" data-note="b2Audio"></a>
-        <a id="c3" class="box music-note c" data-note="c3Audio"></a>
-        <a id="cs3" class="box music-note c sharp" data-note="cs3Audio"></a>
-        <a id="d3" class="box music-note d" data-note="d3Audio"></a>
-        <a id="eb3" class="box music-note e flat" data-note="eb3Audio"></a>
-        <a id="e3" class="box music-note e" data-note="e3Audio"></a>
-        <a id="f3" class="box music-note f" data-note="f3Audio"></a>
-        <a id="fs3" class="box music-note f sharp" data-note="fs3Audio"></a>
-        <a id="g3" class="box music-note g" data-note="g3Audio"></a>
-        <a id="ab3" class="box music-note a flat" data-note="ab3Audio"></a>
-        <a id="a3" class="box music-note a" data-note="a3Audio"></a>
-        <a id="bb3" class="box music-note b flat" data-note="bb3Audio"></a>
-        <a id="b3" class="box music-note b" data-note="b3Audio"></a>
-        <a id="c4" class="box music-note c" data-note="c4Audio"></a>
+        <a id="c2" class="box music-note c" data-note="c2Audio">
+          <audio id="c2Audio">
+            <source src="media/notes_mp3/c2_note.mp3" type="audio/mp3">
+          </audio>
+        </a>
+        <a id="cs2" class="box music-note c sharp" data-note="cs2Audio">
+          <audio id="cs2Audio" preload="auto">
+            <source src="media/notes_mp3/cs2_note.mp3" type="audio/mp3">
+          </audio>
+        </a>
+        <a id="d2" class="box music-note d" data-note="d2Audio">
+          <audio id="d2Audio" preload="auto">
+            <source src="media/notes_mp3/d2_note.mp3" type="audio/mp3">
+          </audio>
+        </a>
+        <a id="eb2" class="box music-note e flat" data-note="eb2Audio">
+            <audio id="eb2Audio" preload="auto">
+              <source src="media/notes_mp3/eb2_note.mp3" type="audio/mp3">
+            </audio>
+        </a>
+        <a id="e2" class="box music-note e" data-note="e2Audio">
+            <audio id="e2Audio" preload="auto">
+              <source src="media/notes_mp3/e2_note.mp3" type="audio/mp3">
+            </audio>
+        </a>
+        <a id="f2" class="box music-note f" data-note="f2Audio">
+            <audio id="f2Audio" preload="auto">
+              <source src="media/notes_mp3/f2_note.mp3" type="audio/mp3">
+            </audio>
+        </a>
+        <a id="fs2" class="box music-note f sharp" data-note="fs2Audio">
+            <audio id="fs2Audio" preload="auto">
+              <source src="media/notes_mp3/fs2_note.mp3" type="audio/mp3">
+            </audio>
+        </a>
+        <a id="g2" class="box music-note g" data-note="g2Audio">
+            <audio id="g2Audio" preload="auto">
+              <source src="media/notes_mp3/g2_note.mp3" type="audio/mp3">
+            </audio>
+        </a>
+        <a id="ab2" class="box music-note a flat" data-note="ab2Audio">
+            <audio id="ab2Audio" preload="auto">
+              <source src="media/notes_mp3/ab2_note.mp3" type="audio/mp3">
+            </audio>
+        </a>
+        <a id="a2" class="box music-note a" data-note="a2Audio">
+          <audio id="a2Audio" preload="auto">
+            <source src="media/notes_mp3/a2_note.mp3" type="audio/mp3">
+          </audio>
+        </a>
+        <a id="bb2" class="box music-note b flat" data-note="bb2Audio">
+          <audio id="bb2Audio" preload="auto">
+            <source src="media/notes_mp3/bb2_note.mp3" type="audio/mp3">
+          </audio>
+        </a>
+        <a id="b2" class="box music-note b" data-note="b2Audio">
+            <audio id="b2Audio" preload="auto">
+    <source src="media/notes_mp3/b2_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="c3" class="box music-note c" data-note="c3Audio">
+            <audio id="c3Audio" preload="auto">
+    <source src="media/notes_mp3/c3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="cs3" class="box music-note c sharp" data-note="cs3Audio">
+            <audio id="cs3Audio" preload="auto">
+    <source src="media/notes_mp3/cs3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="d3" class="box music-note d" data-note="d3Audio">
+            <audio id="d3Audio" preload="auto">
+    <source src="media/notes_mp3/d3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="eb3" class="box music-note e flat" data-note="eb3Audio">
+            <audio id="eb3Audio" preload="auto">
+    <source src="media/notes_mp3/eb3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="e3" class="box music-note e" data-note="e3Audio">
+            <audio id="e3Audio" preload="auto">
+    <source src="media/notes_mp3/e3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="f3" class="box music-note f" data-note="f3Audio">
+            <audio id="f3Audio" preload="auto">
+    <source src="media/notes_mp3/f3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="fs3" class="box music-note f sharp" data-note="fs3Audio">
+            <audio id="fs3Audio" preload="auto">
+    <source src="media/notes_mp3/fs3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="g3" class="box music-note g" data-note="g3Audio">
+            <audio id="g3Audio" preload="auto">
+    <source src="media/notes_mp3/g3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="ab3" class="box music-note a flat" data-note="ab3Audio">
+            <audio id="ab3Audio" preload="auto">
+    <source src="media/notes_mp3/ab3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="a3" class="box music-note a" data-note="a3Audio">
+            <audio id="a3Audio" preload="auto">
+    <source src="media/notes_mp3/a3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="bb3" class="box music-note b flat" data-note="bb3Audio">
+            <audio id="bb3Audio" preload="auto">
+    <source src="media/notes_mp3/bb3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="b3" class="box music-note b" data-note="b3Audio">
+            <audio id="b3Audio" preload="auto">
+    <source src="media/notes_mp3/b3_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
+        <a id="c4" class="box music-note c" data-note="c4Audio">
+            <audio id="c4Audio" preload="auto">
+    <source src="media/notes_mp3/c4_note.mp3" type="audio/mp3">
+  </audio>
+        </a>
     </div>
-    
-    
-    
   </div>
+  <script src="js/song-firebase.js"></script>
+  <script src="js/songBank.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
