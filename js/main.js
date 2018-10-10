@@ -21,6 +21,42 @@ $("#reset").on("click", function() {
     console.log("timer reset");
 })
 
+function upTempo(){
+    beats++
+    tempo = Math.round((min/beats));
+    wholeNote =  tempo * 4;
+    halfNote = wholeNote / 2;
+    halfNoteDot = wholeNote / 2 + (halfNote/2);
+    quarterNote = wholeNote / 4;
+    quarterNoteDot = wholeNote / 4 + (quarterNote/2);
+    eigthNote = wholeNote / 8;
+    eigthNoteDot = wholeNote / 8 + (eigthNote/2);
+    sixteenthNote = wholeNote / 16;
+    sixteenthNoteDot = wholeNote / 16 + (sixteenthNote/2);
+}
+function downTempo(){
+    beats--;
+    tempo = Math.round((min/beats));
+    wholeNote =  tempo * 4;
+    halfNote = wholeNote / 2;
+    halfNoteDot = wholeNote / 2 + (halfNote/2);
+    quarterNote = wholeNote / 4;
+    quarterNoteDot = wholeNote / 4 + (quarterNote/2);
+    eigthNote = wholeNote / 8;
+    eigthNoteDot = wholeNote / 8 + (eigthNote/2);
+    sixteenthNote = wholeNote / 16;
+    sixteenthNoteDot = wholeNote / 16 + (sixteenthNote/2);
+}
+
+$("#down-tempo").on("click", function(){
+    downTempo()
+    console.log(tempo)
+})
+$("#up-tempo").on("click", function(){
+    upTempo();
+    console.log(tempo)
+})
+
 
 // event listener for note click
 $(".music-note").on("click", function(){

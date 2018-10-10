@@ -1,5 +1,6 @@
 
 // currently set to 60 bpm
+// currently set to 60 bpm
 var tempo = 1000;
 var sixteenthNote = tempo / 4;
 var sixteenthNoteDot = tempo / 4 + (sixteenthNote/2);
@@ -10,7 +11,6 @@ var quarterNoteDot = tempo + (quarterNote/2);
 var halfNote = tempo * 2;
 var halfNoteDot = tempo * 2 + (halfNote/2);
 var wholeNote =  tempo * 4;
-
 
 var songBank = [
     {
@@ -138,4 +138,25 @@ var songBank = [
         {note: "cs2Audio", timing: sixteenthNote, sequence: 1},
         {note: "c2Audio", timing: sixteenthNote, sequence: 1},
     ]},
+    {
+        songName: "Saria's Song",
+        songArr: [
+            {note:"f2", timing:eigthNote, sequence:1,},
+            {note:"g2", timing:eigthNote, sequence:1,},
+            {note:"b2", timing:eigthNote, sequence:1,},
+            {note:"f2", timing:eigthNote, sequence:1,},
+            {note:"g2", timing:eigthNote, sequence:1,},
+            {note:"b2", timing:eigthNote, sequence:1,},
+            {note:"f2", timing:eigthNote, sequence:1,},
+            {note:"g2", timing:eigthNote, sequence:1,},
+            {note:"b2", timing:eigthNote, sequence:1,},
+            {note:"d3", timing:eigthNote, sequence:1,},
+            {note:"c3", timing:eigthNote, sequence:1,},
+            {note:"", timing:eigthNote, sequence:1,},
+            {note:"", timing:eigthNote, sequence:1,},
+            {note:"", timing:eigthNote, sequence:1,},
+            {note:"", timing:eigthNote, sequence:1,},
+            {note:"", timing:eigthNote, sequence:1,},
+        ]
+    }
 ]
