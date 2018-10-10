@@ -227,3 +227,20 @@ body {
 .song:active{
     background-color: #1a9ddb;
 }
+.container {
+    position: absolute;
+    bottom: 10%;
+    left: 80%
+}
+.tempo {
+    border: 3px solid #1a9ddb;
+    background-color: #331f35;
+    height: 25px;
+    transform:rotate(-45deg);
+    width: 25px;
+
+}
+
+.display {
+    background-color: cornsilk;
+}
